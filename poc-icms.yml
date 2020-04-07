@@ -1,0 +1,11 @@
+name: poc-icms_7.0.15_信息泄露
+rules: 
+  - method: GET
+    path: /package.json
+  follow_redirects: false
+    expression: |
+      response.status == 200 && response.body.bcontains(b"iCMS v7.0")
+detail:
+  author: wangshao27
+  links:
+    - https://gitee.com/php/icms?_from=gitee_search
